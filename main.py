@@ -159,6 +159,21 @@ with mp_hands.Hands(
                     text = "paper"
                 elif thumb_finger_state == 1 and index_finger_state == 1 and middle_finger_state == 0 and ring_finger_state == 0 and pinky_finger_state == 0:
                     text = "scissors"
+                elif thumb_finger_state == 0 and index_finger_state == 1 and middle_finger_state == 1 and ring_finger_state == 0 and pinky_finger_state == 0:
+                    text = "scissors"
+                # 간섭 때문인지 잘 안된다.
+                # elif thumb_finger_state == 0 and index_finger_state == 0 and middle_finger_state == 0 and ring_finger_state == 1 and pinky_finger_state == 1:
+                #     text = "scissors"
+                elif thumb_finger_state == 1 and index_finger_state == 0 and middle_finger_state == 0 and ring_finger_state == 0 and pinky_finger_state == 0:
+                    text = "Thumbs Up"
+                elif thumb_finger_state == 0 and index_finger_state == 1 and middle_finger_state == 0 and ring_finger_state == 1 and pinky_finger_state == 0:
+                    text = "Rock"
+                elif thumb_finger_state == 0 and index_finger_state == 0 and middle_finger_state == 1 and ring_finger_state == 0 and pinky_finger_state == 0:
+                    text = "Fuck"
+                elif thumb_finger_state == 1 and index_finger_state == 0 and middle_finger_state == 0 and ring_finger_state == 0 and pinky_finger_state == 1:
+                    text = "Call Me"
+                elif thumb_finger_state == 0 and index_finger_state == 0 and middle_finger_state == 0 and ring_finger_state == 0 and pinky_finger_state == 1:
+                    text = "약속해줘~"
                 elif index_finger_state == 0 and middle_finger_state == 0 and ring_finger_state == 0 and pinky_finger_state == 0:
                     text = "Fist"
                 #--------------Error----------------
@@ -179,7 +194,7 @@ with mp_hands.Hands(
                 draw = ImageDraw.Draw(image)
                 draw.rectangle(bbox, outline=color, width=width)
                 # draw.text(text_pos, 'Ground Truth',color,font=font) # font 설정
-                txt = '\n손이 인식되었을때만 나오는 \n박스입니다.\n\n한글이 잘 나옵니다 \n\n제스쳐:'
+                txt = '\n손이 인식되었을때만 나오는 \n박스입니다.\n\n \n\n제스쳐:\n\n\n'
                 txt = txt + text
                 draw.text(text_pos, txt, color, font=font)  # font 설정
 
