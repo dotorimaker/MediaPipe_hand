@@ -36,3 +36,6 @@
 # 레퍼런스
 ### - 구글 mediapipe
 ### https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
+
+# 실행화면
+![Alt text](/image/hand_estimation.jpg)
