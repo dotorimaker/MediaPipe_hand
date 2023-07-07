@@ -64,13 +64,20 @@ import mediapipe as mp
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 
+#드로잉 객체
 mp_drawing = mp.solutions.drawing_utils
+
+#손 객체
 mp_hands = mp.solutions.hands
+
+#드로잉 스타일
 mp_drawing_styles = mp.solutions.drawing_styles
 
 # For webcam input:
+# video capture 한장. 순간 프레임이라고 생각하자.
 cap = cv2.VideoCapture(0) # 카메라 순번 0은 노트북이었음, 1은 usb 외부 카메라
 
+#미디어파이프 손 인스턴스를 쓰고 버리도록 with문을 쓴다.
 with mp_hands.Hands(
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5) as hands:
